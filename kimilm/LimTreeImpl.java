@@ -121,18 +121,17 @@ public class LimTreeImpl<T extends Comparable<T>> implements LimTree<T> {
 		}
 	}
 
-	// ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ돌겠넼ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 걍 부모 포인터를 하나 더 둘깤ㅋㅋㅋㅋㅋㅋ
-	// root는 부모가 없긔
+	// root는 부모를 가지지 않음
 	private TreeNode<T> findParent(TreeNode<T> node, T value) {
 		int compare = node.getValue().compareTo(value);
 		
 		TreeNode<T> left = node.getLeft();
 		TreeNode<T> right = node.getRight();
 		
-		// 삭제하는게 루트라면 여기 걸릴듯
+		// 삭제하는게 루트라면 여기 걸림
 		if (compare == 0)
 			return node;
-		//힝.....
+		// 나머지
 		else if (left.getValue() == value)
 			return node;
 		else if (right.getValue() == value)
